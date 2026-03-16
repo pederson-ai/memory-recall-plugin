@@ -1,0 +1,32 @@
+{
+  "id": "memory-recall",
+  "name": "Memory Auto-Recall",
+  "description": "Automatically searches memory before every prompt and injects relevant context. Ensures the agent always has memory context without relying on tool calls.",
+  "version": "1.0.0",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "maxResults": {
+        "type": "number",
+        "description": "Maximum number of memory search results to inject",
+        "default": 5
+      },
+      "minScore": {
+        "type": "number",
+        "description": "Minimum relevance score threshold",
+        "default": 0.3
+      },
+      "maxChars": {
+        "type": "number",
+        "description": "Maximum characters of memory context to inject",
+        "default": 2000
+      },
+      "skipHeartbeats": {
+        "type": "boolean",
+        "description": "Skip memory injection for heartbeat prompts",
+        "default": true
+      }
+    }
+  }
+}
